@@ -1,0 +1,143 @@
+/* ===== TEMA CLARO (por defecto): variables de color ===== */
+:root {
+  --fondo: #f3f1ec;          /* fondo de la página */
+  --panel: #ffffff;          /* fondo de las tarjetas */
+  --texto: #25231f;          /* color principal del texto */
+  --texto-suave: #6a665d;    /* textos secundarios */
+  --borde: #d9d5ca;          /* color de los bordes */
+  --acento: #8a3b12;         /* color de botones activos */
+  --sobre-acento: #ffffff;   /* texto sobre el color de acento */
+}
+/* ===== TEMA OSCURO: solo cambian las variables ===== */
+body[data-tema="oscuro"] {
+    --fondo: #17181c;
+    --panel: #23252b;
+    --texto: #ecebe6;
+    --texto-suave: #a8a79f;
+    --borde: #3b3e46;
+    --acento: #f0b27a;
+    --sobre-acento: #17181c;
+}
+/* ===== TEMA ALTO CONTRASTE: negro, amarillo y blanco ===== */
+body[data-tema="contraste"] {
+    --fondo: #000000;
+    --panel: #000000;
+    --texto: #ffff00;
+    --texto-suave: #ffffff;
+    --borde: #ffffff;
+    --acento: #ffff00;
+    --sobre-acento: #000000;
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    padding: 24px 16px;
+    transition: background 0.2s, color 0.2s;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 720px;
+    margin: 0 auto;
+}
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    margin-bottom: 20px;
+}
+.encabezado h1 {
+    font-size: 2rem;
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+/* ===== PANEL DE CONTROLES ===== */
+.controles {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.grupo-titulo {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin-bottom: 6px;
+}
+.fila {
+    display: flex;
+    flex-wrap: wrap;           /* en pantallas pequeñas los botones bajan de línea */
+    align-items: center;
+    gap: 8px;
+}
+/* ===== BOTONES ===== */
+.btn {
+    padding: 8px 16px;
+    background: none;
+    color: var(--texto);
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+/* Botón de tema seleccionado (JavaScript le agrega la clase "activo") */
+.btn.activo {
+    background: var(--acento);
+    color: var(--sobre-acento);
+    border-color: var(--acento);
+}
+/* Botones de tamaño cuando llegan al límite */
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.btn-texto {
+    background: none;
+    border: none;
+    color: var(--texto-suave);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.porcentaje {
+    min-width: 52px;
+    text-align: center;
+}
+/* Casilla de interlineado */
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+/* ===== TEXTO DE LECTURA ===== */
+.lectura {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 24px;
+    /* El tamaño base se multiplica por --escala (JavaScript la modifica) */
+    font-size: calc(1rem * var(--escala, 1));
+}
+.lectura h2 {
+    font-size: 1.5em;          /* "em" = relativo al tamaño del artículo */
+    margin-bottom: 12px;
+}
+.lectura p {
+    margin-bottom: 12px;
+}
+/* Interlineado amplio (clase agregada con JavaScript) */
+.lectura.amplio {
+    line-height: 2.1;
+}

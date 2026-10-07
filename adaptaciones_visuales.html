@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adaptaciones visuales</title>
+    <link rel="stylesheet" href="adaptaciones_visuales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="adaptaciones_visuales.js" defer></script>
+</head>
+<body>
+    <!------------------------------------------>
+    <!--|estructuracion_adaptaciones_visuales|-->
+    <!------------------------------------------>
+    <main class="app">
+        <!-- ENCABEZADO: título y descripción -->
+        <header class="encabezado">
+            <h1>Adaptaciones Visuales</h1>
+            <p>Ajusta el tamaño del texto y la apariencia para leer con comodidad.</p>
+        </header>
+        <!-- PANEL DE CONTROLES -->
+        <section class="controles" aria-label="Controles de lectura">
+            <!-- Grupo 1: tamaño del texto -->
+            <div class="grupo">
+                <span class="grupo-titulo">Tamaño del texto</span>
+                <div class="fila">
+                    <!-- Botón para disminuir el tamaño -->
+                    <button id="btnMenos" class="btn" type="button" aria-label="Disminuir texto">A−</button>
+                    <!-- Aquí JavaScript escribe el porcentaje actual -->
+                    <strong id="porcentaje" class="porcentaje">100%</strong>
+                    <!-- Botón para aumentar el tamaño -->
+                    <button id="btnMas" class="btn" type="button" aria-label="Aumentar texto">A+</button>
+                    <!-- Botón para volver al tamaño normal -->
+                    <button id="btnRestablecer" class="btn-texto" type="button">Restablecer</button>
+                </div>
+            </div>
+            <!-- Grupo 2: tema de colores (data-tema indica cuál se aplica) -->
+            <div class="grupo">
+                <span class="grupo-titulo">Colores</span>
+                <div class="fila">
+                    <button class="btn tema" data-tema="claro" type="button">Claro</button>
+                    <button class="btn tema" data-tema="oscuro" type="button">Oscuro</button>
+                    <button class="btn tema" data-tema="contraste" type="button">Alto contraste</button>
+                </div>
+            </div>
+            <!-- Grupo 3: espacio entre líneas -->
+            <label class="opcion">
+                <input type="checkbox" id="interlineado"> Interlineado amplio
+            </label>
+        </section>
+        <!-- TEXTO DE LECTURA: su tamaño cambia con los botones -->
+        <article id="lectura" class="lectura">
+            <h2>Leer cómodamente</h2>
+            <p>
+                No todas las personas ven igual. Algunas necesitan letras más grandes,
+                otras prefieren fondos oscuros o más contraste entre el texto y el fondo.
+            </p>
+            <p>
+                Por eso muchas páginas ofrecen controles para adaptar su aspecto.
+                Con ellos, cada lector puede ajustar el texto según su necesidad
+                y leer sin esforzar la vista.
+            </p>
+            <p>
+                Prueba los botones de arriba: tus preferencias se guardan en el navegador
+                y seguirán aplicadas cuando vuelvas a abrir esta página.
+            </p>
+        </article>
+    </main>
+</body>
+</html>
